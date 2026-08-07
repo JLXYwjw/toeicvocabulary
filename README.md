@@ -99,3 +99,107 @@ python -m http.server 8000
 ---
 
 *纯前端小工具，给自己和所有备考 TOEIC 的朋友。*
+
+---
+
+## English
+
+# TOEIC Vocabulary · Graded Flash Cards
+
+A pure front-end vocabulary learning app for the TOEIC exam, graded into three levels by target score. Features flip-card memorization, progress tracking, local saving, file backup, and cloud sync.
+
+**No backend, no database** — just one HTML file and one JS file. Open and go.
+
+## ✨ Features
+
+- **Three graded levels**: 600 / 730 / 860 target score, 2,053 core TOEIC words in total
+- **Two study modes**
+  - Card mode: click to flip and reveal the definition
+  - List mode: browse words as a quick list
+- **Mark as mastered**: one-click toggle; mastered words are dimmed and struck through
+- **Progress stats**: mastered count, remaining, completion %, progress bar
+- **Search & filter**: search by word or Chinese definition; filter by All / Not mastered / Mastered
+- **Auto-save progress**: dual-channel via localStorage + Cookie, works even when opening the local HTML file
+- **File backup / restore**: export progress to a JSON file, manually restore on another device
+- **Cloud sync**: sync progress between phone and computer via GitHub Gist
+
+## 📁 File Structure
+
+```
+├── index.html          # App entry (use this for deployment)
+├── words.js            # Vocabulary data (2,053 words, three levels)
+├── README.md           # This file
+└── .gitignore          # Excludes personal backup files
+```
+
+## 🚀 Quick Start
+
+### Open locally
+
+Double-click `index.html` to use it (`words.js` must be in the same directory).
+
+### Preview on your LAN (test on your phone)
+
+Start a static server in the project folder, then open it from a phone on the same Wi-Fi:
+
+```bash
+python -m http.server 8000
+```
+
+Open `http://<your-computer-LAN-IP>:8000/` in the phone browser.
+
+### Free deployment (recommended)
+
+Any static hosting platform works — upload `index.html` and `words.js` together:
+
+- **Netlify Drop**: go to `netlify.com/drop`, drag the two files in, get a `https://xxx.netlify.app` URL
+- **GitHub Pages**: push to a repo and enable Pages
+
+Once deployed to an https URL, localStorage saves progress reliably on phones.
+
+## 🔄 Progress Saving & Sync
+
+Progress (mastered words) is stored in the browser's localStorage + Cookie by default, isolated per device and browser. Two ways to sync across devices:
+
+### Option 1: File backup (manual, no account needed)
+
+Top menu "Import/Export" → "Save as backup file" → get a JSON, transfer it via WeChat / Notes / etc. to another device → "Restore from backup file" there.
+
+### Option 2: GitHub Gist cloud sync (automatic, recommended)
+
+Use a GitHub Gist as cloud storage — your phone and computer connect to the same Gist to stay in sync.
+
+**First-time setup (once per device):**
+
+1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token (classic)
+   - Only check the **`gist`** scope, validity suggested 90 days
+2. Open the web app → top menu "Sync" → paste the Token
+3. On the first device click "☁️ Upload", which auto-creates a private Gist and fills in the URL
+4. On the other device paste the same Token → click "⬇️ Pull"
+
+**Daily use:**
+
+- Done studying on phone → phone "Upload"
+- On computer → computer "Pull"
+
+A "Merge" button is also available: keeps mastered words from both sides and pushes the merged result back to the cloud.
+
+> **Security note**: The Token is stored only in the local browser's localStorage and is never uploaded anywhere. The `gist` scope can only read/write your Gists — it cannot access your code repositories. When it expires, generate a new one on GitHub and replace it.
+
+## 🧰 Tech Stack
+
+- Plain HTML + CSS + JavaScript (no build step, no dependencies)
+- [Tailwind CSS](https://cdn.tailwindcss.com) (CDN)
+- [GitHub Gist API](https://docs.github.com/rest/gists) (sync)
+
+## 📄 Vocabulary Data
+
+Words are graded by three TOEIC score bands. Each entry includes the word, phonetic, part of speech, Chinese definition, and an example. See `words.js` for the data structure.
+
+## ⚖️ License
+
+[MIT](LICENSE)
+
+---
+
+*A small pure-frontend tool, for myself and everyone preparing for the TOEIC exam.*
