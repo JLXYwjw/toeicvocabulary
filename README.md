@@ -31,6 +31,14 @@
 
 ## 🚀 快速开始
 
+### 在线体验（已部署）
+
+本项目的官方在线版本部署在 Netlify：
+
+🔗 **https://toeicvocabularywjw.netlify.app**
+
+手机和电脑都能直接访问，无需登录。
+
 ### 本地打开
 
 直接双击 `index.html` 即可使用（`words.js` 必须与它同目录）。
@@ -137,6 +145,14 @@ A pure front-end vocabulary learning app for the TOEIC exam, graded into three l
 ```
 
 ## 🚀 Quick Start
+
+### Try it online (deployed)
+
+The official live version of this project is hosted on Netlify:
+
+🔗 **https://toeicvocabularywjw.netlify.app**
+
+Accessible from both phone and computer, no login required.
 
 ### Open locally
 
