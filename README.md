@@ -22,7 +22,8 @@
 ```
 ├── index.html          # 应用入口（部署时用这个）
 ├── words.js            # 词汇数据（2053 词，三个等级）
-├── README.md           # 本文件
+├── README.md           # 项目说明（中英双语）
+├── NETLIFY.md          # Netlify 部署详细指南
 └── .gitignore          # 忽略个人备份文件
 ```
 
@@ -50,6 +51,8 @@ python -m http.server 8000
 
 - **Netlify Drop**：打开 `netlify.com/drop`，把两个文件拖进去，即可获得 `https://xxx.netlify.app` 网址
 - **GitHub Pages**：推到仓库后开启 Pages
+
+> 📖 **Netlify 详细部署教程**：见 [NETLIFY.md](NETLIFY.md)（免费与否、Drop 手动部署、连接 GitHub 自动部署、更新网站、自定义域名、常见问题）
 
 部署成 https 网址后，localStorage 才能在手机上可靠保存进度。
 
@@ -128,7 +131,8 @@ A pure front-end vocabulary learning app for the TOEIC exam, graded into three l
 ```
 ├── index.html          # App entry (use this for deployment)
 ├── words.js            # Vocabulary data (2,053 words, three levels)
-├── README.md           # This file
+├── README.md           # Project readme (Chinese & English)
+├── NETLIFY.md          # Detailed Netlify deployment guide
 └── .gitignore          # Excludes personal backup files
 ```
 
@@ -154,6 +158,8 @@ Any static hosting platform works — upload `index.html` and `words.js` togethe
 
 - **Netlify Drop**: go to `netlify.com/drop`, drag the two files in, get a `https://xxx.netlify.app` URL
 - **GitHub Pages**: push to a repo and enable Pages
+
+> 📖 **Detailed Netlify deployment guide**: see [NETLIFY.md](NETLIFY.md) (is it free, Drop manual deploy, connect GitHub for auto-deploy, updating the site, custom domains, FAQ)
 
 Once deployed to an https URL, localStorage saves progress reliably on phones.
 
