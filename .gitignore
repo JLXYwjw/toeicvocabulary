@@ -5,5 +5,5 @@ toeic-vocab-backup.json
 _backup_before_fix.html
 _fix_html.py
 
-# 源书资料（大PDF仅本地，不入git）
-单词Base/
+# 源书资料：超大PDF仅本地，不入git
+单词Base/*.pdf
