@@ -883,8 +883,9 @@
     }
     
     function getPosClass(pos) {
+        const primary = (pos || '').split('/')[0].trim();
         const map = {'名': 'pos-名', '動': 'pos-動', '形': 'pos-形', '副': 'pos-副', '前': 'pos-前', '句': 'pos-句'};
-        return map[pos] || 'pos-default';
+        return map[primary] || 'pos-default';
     }
     
     function createWordCard(word, idx) {
