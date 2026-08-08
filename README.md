@@ -84,6 +84,28 @@
 | `README.md` | 项目说明 |
 | `NETLIFY.md` | 免费部署详细教程 |
 
+## 📖 词汇数据说明
+
+词汇来自 TOEIC 备考书 **《出る単特急 金のフレーズ》/《銀のフレーズ》**（TEX 加藤 著），按分数分三档，每条包含：
+
+| 字段 | 说明 |
+|---|---|
+| `word` | 单词 |
+| `phonetic` | 标准 IPA 音标（英式，`uk` 字段另存美式） |
+| `pos` | 词性（如 名/動/形，多词性用 `/` 分隔） |
+| `meaning` | 中文释义 |
+| `example` | 学习笔记（**日文原文**） |
+| `us` / `uk` | 美式 / 英式发音 URL |
+
+**关于日文笔记（example）：**
+
+- 约 **1447 个词条**的 `example` 字段是**原书的日文学习笔记**，**保留日文原文**，未翻译成中文
+- 内容包括：派生词、同义词、用法提示、考点说明、例句等（如 `◎addition`、`★必出`、`×almost employees`）
+- 因为原文是日文，**不懂日语的同学**直接看 example 可能不理解，可结合 `meaning`（中文释义）一起看，或用网页翻译工具辅助
+- 这是刻意保留的——日文笔记信息密度高，且是原作者的考试经验总结
+
+> 如需将日文笔记翻译成中文，或希望去掉日文只留中文/英文，可以后续按需处理。
+
 ## 🧰 技术栈
 
 纯原生 HTML + CSS + JavaScript，零依赖，一个文件搞定。数据存浏览器本地，跨设备靠文件或 GitHub Gist。
@@ -185,6 +207,28 @@ Progress is auto-saved in the browser. Two ways to sync:
 | `words.js` | Vocabulary data (2,053 words with standard IPA, POS, meanings, US/UK audio) |
 | `README.md` | This readme |
 | `NETLIFY.md` | Free deployment guide |
+
+## 📖 Vocabulary Data
+
+Words come from the TOEIC prep books **《出る単特急 金のフレーズ》/《銀のフレーズ》** (by TEX Kato), graded into three score levels. Each entry has:
+
+| Field | Meaning |
+|---|---|
+| `word` | The word |
+| `phonetic` | Standard IPA (UK; US stored in the `uk`/`us` fields) |
+| `pos` | Part of speech (名/動/形, multi-POS separated by `/`) |
+| `meaning` | Chinese definition |
+| `example` | Study notes (**Japanese original**) |
+| `us` / `uk` | US / UK pronunciation audio URLs |
+
+**About the Japanese notes (`example`):**
+
+- About **1,447 entries** have `example` notes written in **the original Japanese**, kept untranslated on purpose
+- They contain derived words, synonyms, usage tips, exam points, and example sentences (e.g. `◎addition`, `★must-know`, `×almost employees`)
+- If you don't read Japanese, they can be puzzling — use the `meaning` (Chinese) alongside, or a web page translator
+- This is intentional: the Japanese notes are dense and carry the author's exam experience
+
+> If you'd like the Japanese notes translated to Chinese, or stripped to keep only Chinese/English, that can be done on request.
 
 ## 🧰 Tech Stack
 
