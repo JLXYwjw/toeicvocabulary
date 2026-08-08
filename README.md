@@ -86,7 +86,13 @@
 
 ## 📖 词汇数据说明
 
-词汇来自 TOEIC 备考书 **《出る単特急 金のフレーズ》/《銀のフレーズ》**（TEX 加藤 著），按分数分三档，每条包含：
+词汇整合自三本 TOEIC 备考书，按分数分三档：
+
+- **《出る単特急 金のフレーズ》**（TEX 加藤 著，TOEIC 650+ 高频词）
+- **《出る単特急 銀のフレーズ》**（TEX 加藤 著，入门基础词）
+- **《TOEIC 官方蓝皮书 超高频词汇》**（ETS 官方词汇书）
+
+每条包含：
 
 | 字段 | 说明 |
 |---|---|
@@ -210,7 +216,13 @@ Progress is auto-saved in the browser. Two ways to sync:
 
 ## 📖 Vocabulary Data
 
-Words come from the TOEIC prep books **《出る単特急 金のフレーズ》/《銀のフレーズ》** (by TEX Kato), graded into three score levels. Each entry has:
+Words are integrated from three TOEIC prep books, graded into three score levels:
+
+- **《出る単特急 金のフレーズ》** (by TEX Kato, high-frequency words for 650+)
+- **《出る単特急 銀のフレーズ》** (by TEX Kato, beginner foundation words)
+- **《TOEIC 官方蓝皮书 超高频词汇》** (ETS Official Vocabulary Book)
+
+Each entry has:
 
 | Field | Meaning |
 |---|---|
