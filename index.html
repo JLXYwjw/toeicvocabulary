@@ -835,15 +835,21 @@
                 tab.classList.add('active');
                 const colors = levelColors[i];
                 tab.style.background = 'linear-gradient(135deg, ' + colors.from + ', ' + colors.to + ')';
-                tab.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-700');
+                tab.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-700',
+                    'bg-gradient-to-br', 'bg-gradient-to-tr', 'from-green-500', 'to-emerald-600',
+                    'from-blue-500', 'to-indigo-600', 'from-purple-500', 'to-purple-700');
                 tab.classList.add('text-white');
                 tab.querySelector('.text-xs').classList.remove('text-slate-500');
                 tab.querySelector('.text-xs').classList.add('opacity-90');
             } else {
                 tab.classList.remove('active');
                 tab.style.background = '';
+                tab.classList.remove(
+                    'bg-gradient-to-br', 'bg-gradient-to-tr', 'from-green-500', 'to-emerald-600',
+                    'from-blue-500', 'to-indigo-600', 'from-purple-500', 'to-purple-700',
+                    'text-white'
+                );
                 tab.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-700');
-                tab.classList.remove('text-white');
                 tab.querySelector('.text-xs').classList.add('text-slate-500');
                 tab.querySelector('.text-xs').classList.remove('opacity-90');
             }
