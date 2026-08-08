@@ -913,11 +913,11 @@
     }
 
     // ========== 发音 ==========
-    function playBtns(word) {
-        return '<button class="play-btn inline-flex items-center justify-center w-6 h-6 rounded-md text-slate-400 hover:text-blue-500 hover:bg-blue-50 transition-all flex-shrink-0" data-play="' + escapeAttr(word) + '" data-accent="us" title="美式发音" onclick="event.stopPropagation();playWord(this)">' +
+    function playBtns(word, usUrl, ukUrl) {
+        return '<button class="play-btn inline-flex items-center justify-center w-6 h-6 rounded-md text-slate-400 hover:text-blue-500 hover:bg-blue-50 transition-all flex-shrink-0" data-play="' + escapeAttr(word) + '" data-accent="us" data-us="' + escapeAttr(usUrl || '') + '" title="美式发音" onclick="event.stopPropagation();playWord(this)">' +
                     '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H2v6h4l5 4V5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.5 8.5a5 5 0 010 7"/></svg>' +
                 '</button>' +
-                '<button class="play-btn inline-flex items-center justify-center w-6 h-6 rounded-md text-slate-400 hover:text-purple-500 hover:bg-purple-50 transition-all flex-shrink-0" data-play="' + escapeAttr(word) + '" data-accent="uk" title="英式发音" onclick="event.stopPropagation();playWord(this)">' +
+                '<button class="play-btn inline-flex items-center justify-center w-6 h-6 rounded-md text-slate-400 hover:text-purple-500 hover:bg-purple-50 transition-all flex-shrink-0" data-play="' + escapeAttr(word) + '" data-accent="uk" data-uk="' + escapeAttr(ukUrl || '') + '" title="英式发音" onclick="event.stopPropagation();playWord(this)">' +
                     '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H2v6h4l5 4V5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.5 8.5a5 5 0 010 7"/></svg>' +
                 '</button>';
     }
@@ -930,8 +930,16 @@
     function playWord(btn) {
         const word = btn.getAttribute('data-play');
         const accent = btn.getAttribute('data-accent');
-        const type = accent === 'uk' ? 2 : 1;
-        const url = 'https://dict.youdao.com/dictvoice?audio=' + encodeURIComponent(word) + '&type=' + type;
+        const attrKey = accent === 'uk' ? 'data-uk' : 'data-us';
+        const storedUrl = btn.getAttribute(attrKey);
+        // 优先用数据里的音频URL, 没有则用有道兜底
+        let url;
+        if (storedUrl) {
+            url = storedUrl;
+        } else {
+            const type = accent === 'uk' ? 2 : 1;
+            url = 'https://dict.youdao.com/dictvoice?audio=' + encodeURIComponent(word) + '&type=' + type;
+        }
         if (audioEl) {
             audioEl.pause();
         }
@@ -958,7 +966,7 @@
                         batchCheck +
                         '<div class="flex items-center justify-center gap-1.5 mb-2">' +
                             '<span class="text-xl font-bold text-slate-800 word-text">' + escapeHtml(word.word) + '</span>' +
-                            (batchMode ? '' : playBtns(word.word)) +
+                            (batchMode ? '' : playBtns(word.word, word.us, word.uk)) +
                         '</div>' +
                         (word.phonetic ? '<div class="text-sm text-slate-400 mb-3">' + escapeHtml(word.phonetic) + '</div>' : '') +
                         (word.pos ? '<span class="pos-tag ' + posClass + '">' + escapeHtml(word.pos) + '</span>' : '') +
@@ -984,7 +992,7 @@
                         '<div class="flex items-center gap-2 mb-1.5 flex-wrap">' +
                             batchCheck +
                             '<span class="text-lg font-bold text-slate-800 word-text">' + escapeHtml(word.word) + '</span>' +
-                            (batchMode ? '' : playBtns(word.word)) +
+                            (batchMode ? '' : playBtns(word.word, word.us, word.uk)) +
                             (word.pos ? '<span class="pos-tag ' + posClass + '">' + escapeHtml(word.pos) + '</span>' : '') +
                         '</div>' +
                         (word.phonetic ? '<div class="text-sm text-slate-400">' + escapeHtml(word.phonetic) + '</div>' : '') +
