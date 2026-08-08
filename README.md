@@ -121,7 +121,9 @@
 
 ## ⚖️ License
 
-[MIT](LICENSE)
+**代码**（`index.html`、构建逻辑）基于 [MIT](LICENSE) 许可。
+
+**词汇数据**（`words.js` 内容）整合自受版权保护的书籍（《金のフレーズ》《銀のフレーズ》by TEX 加藤、朝日新聞出版；《TOEIC 官方蓝皮书》by ETS），**版权归原作者所有，仅供个人学习**，不适用 MIT 许可。详见 [LICENSE](LICENSE) 末尾的数据版权声明。
 
 ---
 
@@ -254,7 +256,9 @@ Plain HTML + CSS + JavaScript, zero dependencies, one file. Data lives in your b
 
 ## ⚖️ License
 
-[MIT](LICENSE)
+The **code** (`index.html`, app logic) is licensed under [MIT](LICENSE).
+
+The **vocabulary data** (contents of `words.js`) is compiled from copyrighted books (金のフレーズ / 銀のフレーズ by TEX Kato, Asahi Shimbun Publications; TOEIC Official Blue Book by ETS). **Copyright belongs to the original authors; for personal study only** — not covered by MIT. See the data copyright note at the end of [LICENSE](LICENSE).
 
 ---
 

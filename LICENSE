@@ -1,0 +1,35 @@
+MIT License
+
+Copyright (c) 2026 wangjiawei
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 词汇数据版权声明 / Vocabulary Data Copyright
+
+本仓库中的**词汇数据**（`words.js` 的内容，包括单词、释义、音标、日文学习笔记等）整合自以下受版权保护的出版书籍，**版权归原作者所有，仅供个人学习使用，不适用 MIT 许可**：
+
+The **vocabulary data** in this repository (the contents of `words.js` — words, definitions, phonetics, Japanese study notes, etc.) is compiled from the following copyrighted publications. The copyright belongs to their original authors, and this data is **for personal study use only, NOT covered by the MIT license**:
+
+- 《出る単特急 金のフレーズ》／《銀のフレーズ》 — 著：TEX 加藤，发行：朝日新聞出版
+- 《TOEIC 官方蓝皮书 超高频词汇》 — ETS (Educational Testing Service)
+
+如需将这些数据用于其他用途（商业、出版、再分发等），请直接联系版权所有者取得授权。
+For any other use of this data (commercial, publication, redistribution, etc.), please contact the copyright holders for permission.
