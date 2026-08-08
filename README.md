@@ -29,19 +29,22 @@
 - 顶部实时显示：**已掌握 / 剩余 / 完成百分比 / 进度条**
 - 已掌握的词在列表里划线弱化，不用重复看
 
-### 3. 批量掌握
+### 3. 英美发音 🔊
+单词旁有两个小喇叭：🔵 **美式发音** / 🟣 **英式发音**，点一下即播放。音标也同时标注**英美两套**（如 `schedule` 英 `[ˈʃedjuːl]` / 美 `[ˈskedʒuːl]`），发音与音标均来自权威词典。
+
+### 4. 批量掌握
 想一次性标记一批单词为已掌握？点工具栏 **✅ 批量掌握**，进入选择模式——每个卡片出现复选框，**勾选任意多个**单词，点「标记已掌握」统一完成。适合「这一批我其实都会，只是没一个个点」的情况。支持「全选当前」一键勾选当前筛选下所有未掌握的词。
 
-### 4. 导出未掌握单词（重点复习）
+### 5. 导出未掌握单词（重点复习）
 点工具栏 **📄 导出未掌握**，把当前级别没掌握的单词导出成 TXT（**每个单词一行**），文件名自动带级别和数量（如 `level2-未掌握-187词.txt`）。
 - 可以发到微信 / 备忘录 / 打印出来，按自己节奏复习
 - 手机自动调起分享，电脑直接保存文件
 
-### 5. 搜索 & 筛选
+### 6. 搜索 & 筛选
 - 顶部搜索框：按**单词或中文释义**搜索
 - 筛选按钮：**全部 / 未掌握 / 已掌握**，只看想看的
 
-### 6. 换设备不丢进度
+### 7. 换设备不丢进度
 进度自动保存在浏览器本地。跨设备同步有两种方式：
 
 **方式一：文件备份（无需账号）**
@@ -63,7 +66,7 @@
 | 文件 | 用途 |
 |---|---|
 | `index.html` | 应用本体（部署用这个） |
-| `words.js` | 词汇数据（2053 词，含音标、词性、释义） |
+| `words.js` | 词汇数据（2053 词，含标准音标、词性、释义、英美发音） |
 | `README.md` | 项目说明 |
 | `NETLIFY.md` | 免费部署详细教程 |
 
@@ -114,19 +117,22 @@ Tap the level card to switch. **Card mode**: tap to flip and reveal the definiti
 - Top bar shows **mastered / remaining / completion % / progress bar** live
 - Mastered words are dimmed and struck through, so you skip them
 
-### 3. One-click batch master
+### 3. US / UK pronunciation 🔊
+Each word has two speaker buttons: 🔵 **US** / 🟣 **UK** — tap to hear it spoken. Phonetics show **both US and UK forms** (e.g. `schedule` UK `[ˈʃedjuːl]` / US `[ˈskedʒuːl]`), sourced from an authoritative dictionary.
+
+### 4. One-click batch master
 Want to mark a batch of words as mastered at once? Tap **✅ Batch Master** to enter selection mode — every card shows a checkbox. **Check any number of words**, then tap "Mark as mastered" to finish them all in one go. Perfect for "I actually know this batch, I just didn't tap each one." "Select All" grabs every unmastered word in the current filter.
 
-### 4. Export unmastered words (focus review)
+### 5. Export unmastered words (focus review)
 Tap **📄 Export Unmastered** to export the words you haven't mastered in the current level to a TXT file — **one word per line**. The filename includes the level and count (e.g. `level2-unmastered-187words.txt`).
 - Send it to WeChat / Notes / print it, and review at your own pace
 - On mobile it opens the system share sheet; on desktop it saves the file directly
 
-### 5. Search & filter
+### 6. Search & filter
 - Search box: search by **word or Chinese definition**
 - Filter buttons: **All / Unmastered / Mastered**
 
-### 6. Never lose progress across devices
+### 7. Never lose progress across devices
 Progress is auto-saved in the browser. Two ways to sync:
 
 **Option 1: File backup (no account)**
@@ -148,7 +154,7 @@ Progress is auto-saved in the browser. Two ways to sync:
 | File | Purpose |
 |---|---|
 | `index.html` | The app (use this for deployment) |
-| `words.js` | Vocabulary data (2,053 words with phonetics, POS, meanings) |
+| `words.js` | Vocabulary data (2,053 words with standard IPA, POS, meanings, US/UK audio) |
 | `README.md` | This readme |
 | `NETLIFY.md` | Free deployment guide |
 
