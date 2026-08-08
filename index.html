@@ -363,6 +363,18 @@
                         </svg>
                         <span class="hidden sm:inline">重置</span>
                     </button>
+                    <button onclick="masterAllLevel()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 transition-all" title="一键掌握当前级别所有单词">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="hidden sm:inline">一键掌握</span>
+                    </button>
+                    <button onclick="exportUnmasteredTxt()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all" title="导出当前级别未掌握的单词为TXT">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span class="hidden sm:inline">导出未掌握</span>
+                    </button>
                 </div>
             </div>
             
@@ -965,6 +977,73 @@
             updateStats();
             showToast('进度已重置', 'success');
         });
+    }
+
+    function masterAllLevel() {
+        const level = DATA.levels[currentLevel];
+        const total = level.words.length;
+        let added = 0;
+        level.words.forEach(w => {
+            const id = level.id + '_' + w.word;
+            if (!mastered[id]) {
+                mastered[id] = true;
+                added++;
+            }
+        });
+        saveProgress();
+        renderWords();
+        updateStats();
+        showToast('已掌握全部 ' + total + ' 个词（新增 ' + added + ' 个）✓', 'success');
+    }
+
+    function exportUnmasteredTxt() {
+        const level = DATA.levels[currentLevel];
+        const unmastered = level.words.filter(w => !mastered[level.id + '_' + w.word]);
+        const content = unmastered.map(w => w.word).join('\n');
+        const fileName = level.id + '-未掌握-' + unmastered.length + '词.txt';
+
+        // 手机：优先用系统分享
+        if (navigator.share && /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
+            const file = new File([content], fileName, { type: 'text/plain;charset=utf-8' });
+            navigator.share({
+                files: [file],
+                title: 'TOEIC 未掌握单词',
+                text: '共 ' + unmastered.length + ' 个未掌握单词'
+            }).then(() => showToast('已分享 ✓', 'success'))
+              .catch(() => downloadUnmasteredTxt(content, fileName));
+            return;
+        }
+
+        try {
+            // 电脑：优先用 File System Access API
+            if (window.showSaveFilePicker) {
+                window.showSaveFilePicker({
+                    suggestedName: fileName,
+                    types: [{ description: 'TXT 文件', accept: { 'text/plain': ['.txt'] } }]
+                }).then(async handle => {
+                    const writable = await handle.createWritable();
+                    await writable.write(content);
+                    await writable.close();
+                    showToast('已导出 ' + unmastered.length + ' 个未掌握单词 ✓', 'success');
+                }).catch(() => {});
+                return;
+            }
+        } catch(e) {}
+
+        downloadUnmasteredTxt(content, fileName);
+    }
+
+    function downloadUnmasteredTxt(content, fileName) {
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
+        showToast('已导出未掌握单词 ✓', 'success');
     }
     
     function renderWords() {
