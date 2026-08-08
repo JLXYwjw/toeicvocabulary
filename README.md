@@ -20,7 +20,7 @@
 
 ### 1. 分级背词
 按分数分三档，从简单到难循序渐进：
-- 🌱 **600分 基础词汇**（415 词）· 🚀 **730分 进阶词汇**（705 词）· 🏆 **860分 高级词汇**（933 词）
+- 🌱 **600分 基础词汇**（425 词）· 🚀 **730分 进阶词汇**（712 词）· 🏆 **860分 高级词汇**（947 词）
 
 点击顶部等级卡切换。**卡片模式**：点卡片翻面看释义；**列表模式**：快速浏览所有词。
 
@@ -80,9 +80,12 @@
 | 文件 | 用途 |
 |---|---|
 | `index.html` | 应用本体（部署用这个） |
-| `words.js` | 词汇数据（2053 词，含标准音标、词性、释义、英美发音） |
+| `words.js` | 词汇数据（2084 词，含标准音标、词性、释义、英美发音） |
 | `README.md` | 项目说明 |
 | `NETLIFY.md` | 免费部署详细教程 |
+| `单词Base/` | 源书资料（金/銀 txt+docx、蓝皮书 docx，已入库） |
+
+> `单词Base/` 里的 3 个超大 PDF（金/銀/蓝皮书，共 665MB）超过 GitHub 单文件限制，**仅存本地**未入库；txt/docx 源文件已提交，方便追溯词汇来源。
 
 ## 📖 词汇数据说明
 
@@ -105,7 +108,7 @@
 
 **关于日文笔记（example）：**
 
-- 约 **1447 个词条**的 `example` 字段是**原书的日文学习笔记**，**保留日文原文**，未翻译成中文
+- 约 **1490 个词条**的 `example` 字段是**原书的日文学习笔记**，**保留日文原文**，未翻译成中文
 - 内容包括：派生词、同义词、用法提示、考点说明、例句等（如 `◎addition`、`★必出`、`×almost employees`）
 - 因为原文是日文，**不懂日语的同学**直接看 example 可能不理解，可结合 `meaning`（中文释义）一起看，或用网页翻译工具辅助
 - 这是刻意保留的——日文笔记信息密度高，且是原作者的考试经验总结
@@ -150,7 +153,7 @@ Download `index.html` and `words.js` (same folder), then double-click `index.htm
 
 ### 1. Graded vocabulary
 Three levels, from easy to hard:
-- 🌱 **600 Beginner** (415 words) · 🚀 **730 Intermediate** (705 words) · 🏆 **860 Advanced** (933 words)
+- 🌱 **600 Beginner** (425 words) · 🚀 **730 Intermediate** (712 words) · 🏆 **860 Advanced** (947 words)
 
 Tap the level card to switch. **Card mode**: tap to flip and reveal the definition. **List mode**: browse all words quickly.
 
@@ -210,9 +213,12 @@ Progress is auto-saved in the browser. Two ways to sync:
 | File | Purpose |
 |---|---|
 | `index.html` | The app (use this for deployment) |
-| `words.js` | Vocabulary data (2,053 words with standard IPA, POS, meanings, US/UK audio) |
+| `words.js` | Vocabulary data (2,084 words with standard IPA, POS, meanings, US/UK audio) |
 | `README.md` | This readme |
 | `NETLIFY.md` | Free deployment guide |
+| `单词Base/` | Source-book files (金/銀 txt+docx, blue-book docx, committed) |
+
+> The 3 oversized PDFs in `单词Base/` (金/銀/blue book, 665MB total) exceed GitHub's file-size limit, so they stay **local-only** and are not committed; the txt/docx sources are committed for traceability.
 
 ## 📖 Vocabulary Data
 
@@ -235,7 +241,7 @@ Each entry has:
 
 **About the Japanese notes (`example`):**
 
-- About **1,447 entries** have `example` notes written in **the original Japanese**, kept untranslated on purpose
+- About **1,490 entries** have `example` notes written in **the original Japanese**, kept untranslated on purpose
 - They contain derived words, synonyms, usage tips, exam points, and example sentences (e.g. `◎addition`, `★must-know`, `×almost employees`)
 - If you don't read Japanese, they can be puzzling — use the `meaning` (Chinese) alongside, or a web page translator
 - This is intentional: the Japanese notes are dense and carry the author's exam experience
