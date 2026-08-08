@@ -32,6 +32,20 @@
 ### 3. 英美发音 🔊
 单词旁有两个小喇叭：🔵 **美式发音** / 🟣 **英式发音**，点一下即播放。音标也同时标注**英美两套**（如 `schedule` 英 `[ˈʃedjuːl]` / 美 `[ˈskedʒuːl]`），发音与音标均来自权威词典。
 
+**发音技术方案：**
+
+| 项目 | 说明 |
+|---|---|
+| 发音源 | **有道词典真人发音**（`dict.youdao.com/dictvoice`），非机器 TTS 合成 |
+| 英式音频 | `dictvoice?audio=单词&type=1`（真人录制） |
+| 美式音频 | `dictvoice?audio=单词&type=2`（真人录制） |
+| 数据存储 | 每个词条含 `us`（美式 URL）和 `uk`（英式 URL）两个字段，随 `words.js` 一起加载 |
+| 播放逻辑 | 优先用词条里已存的音频 URL；个别缺失时用有道 TTS 即时合成兜底 |
+| 音标来源 | 有道词典权威 IPA（英/美两套），全部 1802 个单字已核对替换 |
+| 网络要求 | 国内可正常访问（Google TTS 在国内被墙，已弃用） |
+
+> 音标和发音均以**英美真实发音**为准，适合边听边记。
+
 ### 4. 批量掌握
 想一次性标记一批单词为已掌握？点工具栏 **✅ 批量掌握**，进入选择模式——每个卡片出现复选框，**勾选任意多个**单词，点「标记已掌握」统一完成。适合「这一批我其实都会，只是没一个个点」的情况。支持「全选当前」一键勾选当前筛选下所有未掌握的词。
 
@@ -119,6 +133,20 @@ Tap the level card to switch. **Card mode**: tap to flip and reveal the definiti
 
 ### 3. US / UK pronunciation 🔊
 Each word has two speaker buttons: 🔵 **US** / 🟣 **UK** — tap to hear it spoken. Phonetics show **both US and UK forms** (e.g. `schedule` UK `[ˈʃedjuːl]` / US `[ˈskedʒuːl]`), sourced from an authoritative dictionary.
+
+**How pronunciation works:**
+
+| Item | Details |
+|---|---|
+| Audio source | **Youdao dictionary real recordings** (`dict.youdao.com/dictvoice`), not machine TTS |
+| UK audio | `dictvoice?audio=word&type=1` (real recording) |
+| US audio | `dictvoice?audio=word&type=2` (real recording) |
+| Data storage | Each entry has `us` (US URL) and `uk` (UK URL) fields, loaded with `words.js` |
+| Playback | Uses the entry's stored URL first; falls back to Youdao TTS synthesis for any missing ones |
+| Phonetic source | Authoritative Youdao IPA (both US & UK), all 1,802 single words verified |
+| Network | Works in mainland China (Google TTS is blocked there, so it was dropped) |
+
+> Pronunciation and phonetics follow real US/UK audio — great for listening while you study.
 
 ### 4. One-click batch master
 Want to mark a batch of words as mastered at once? Tap **✅ Batch Master** to enter selection mode — every card shows a checkbox. **Check any number of words**, then tap "Mark as mastered" to finish them all in one go. Perfect for "I actually know this batch, I just didn't tap each one." "Select All" grabs every unmastered word in the current filter.
